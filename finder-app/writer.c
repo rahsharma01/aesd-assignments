@@ -18,7 +18,7 @@ int main(int argc, char * argv[], char * envp[])
 	newFileToWrite = fopen(argv[1],"w");
 	if (newFileToWrite == NULL || argv[1] == NULL || argv[2] == NULL)
 	{
-		syslog(LOG_ERR, "Unable to create file %s, %s\n", argv[1], strerror(errno));
+		syslog(LOG_ERR, "Unable to create file! %s, %s\n", argv[1], strerror(errno));
 		closelog();
 		return 1;
 	}
@@ -26,7 +26,7 @@ int main(int argc, char * argv[], char * envp[])
 	rc = fwrite(argv[2], sizeof(char), strlen(argv[2]), newFileToWrite);
 	if (rc != sizeof(char) * strlen(argv[2]))
 	{
-		syslog(LOG_ERR, "Unable to write string properaly\n");
+		syslog(LOG_ERR, "Unable to write string properaly!\n");
 		closelog();
 		fclose(newFileToWrite);
 		return 1;
