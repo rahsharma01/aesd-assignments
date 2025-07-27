@@ -1,5 +1,5 @@
 CC=gcc
-CROSS_COMPILE=aarch64-none-linux-gnu-
+#CROSS_COMPILE=aarch64-none-linux-gnu-
 CFLAGS=-g -Wall
 all: writer writer.o writer.c
 writer: writer.o
