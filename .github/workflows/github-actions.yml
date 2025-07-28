@@ -10,9 +10,9 @@ jobs:
         container: cuaesd/aesd-autotest:unit-test
         runs-on: self-hosted
         steps:
-          - uses: actions/checkout@v2
           - name: Disable Git SSL verification
-          - run : git config --global http.sslVerify false
+            run : git config --global http.sslVerify false
+          - uses: actions/checkout@v2
           - name: Checkout submodules
             run : git submodule update --init --recursive
           - name: Run unit test
@@ -21,9 +21,9 @@ jobs:
         container: cuaesd/aesd-autotest:assignment2
         runs-on: self-hosted
         steps:
-          - uses: actions/checkout@v2
           - name: Disable Git SSL verification
-          - run : git config --global http.sslVerify false
+            run : git config --global http.sslVerify false
+          - uses: actions/checkout@v2
           - name: Checkout submodules
             run : git submodule update --init --recursive
           - name: Run full test
